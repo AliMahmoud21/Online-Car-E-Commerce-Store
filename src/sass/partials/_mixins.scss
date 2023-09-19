@@ -1,0 +1,10 @@
+// Importing other partials files
+@use './variables' as *;
+
+
+// Flex Mixins
+@mixin flexBetween {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

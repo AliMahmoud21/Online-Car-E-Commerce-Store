@@ -1,0 +1,110 @@
+// Importing the variables file
+@use '../partials/variables' as *;
+@use '../partials/mixins' as *;
+
+// Styling the search component
+.search {
+    padding: 2rem 0;
+    
+    .title {
+        color: $darkColor;
+        padding: 1rem 0;
+        text-align: center;
+        line-height: 1.7;
+        font: {
+            size: 1.25rem;
+            weight: 700;
+        }
+    }
+
+    .searchDiv {
+        gap: .5rem;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+
+        input {
+            border-radius: .25rem;
+            border: 1px solid $secondryColor;
+            padding: .25rem .75rem;
+            outline: none;
+            width: 100%;
+
+            &:focus {
+                border: none;
+                border: 1px solid $primaryColor;
+            }
+        }
+
+        .btn {
+            justify-content: center;
+            width: 100%;
+            align-self: center;
+            gap: .3rem;
+
+            .icon {
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+
+
+// Responsive 520px Screens
+@media screen and (min-width: 520px) {
+    .search {
+        .title {
+            font-size: 1.5rem;
+            padding: 2rem 0;
+        }
+
+        .searchDiv {
+            input {
+                padding: .75rem;
+                font-weight: 600;
+                color: $primaryColor;
+                border: 2px solid $greyColor;
+            }
+
+            .btn {
+                justify-content: center;
+                width: 100%;
+                align-items: center;
+                gap: .3rem;
+                font-size: 1rem;
+
+                .icon {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
+
+
+// Responsive 768px Screens
+@media screen and (min-width: 768px) {
+    .search {
+        .title {
+            font-size: 2rem;
+            padding: 2rem 0;
+        }
+
+        .searchDiv {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+
+// Responsive 991px Screens
+@media screen and (min-width: 991px) {
+    .search {
+        width: 80%;
+        margin: auto;
+
+        .searchDiv {
+            grid-template-columns: repeat(5, 1fr);
+        }
+    }
+}

@@ -1,0 +1,97 @@
+// Importing the variables file
+@use '../partials/variables' as *;
+@use '../partials/mixins' as *;
+
+// Styling the sellers component
+.sellers {
+    background-color: $greyColor;
+    // margin: 2rem 0;
+    
+    .sectionContainer {
+        .sellersContainer {
+            .singleSeller {
+                padding: .5rem 0;
+                border-radius: .18rem;
+                gap: 1rem;
+                transition: $transition;
+                
+                .imgDiv {
+                    width: 4rem;
+                    padding: .75rem;
+                    border-radius: .18rem;
+                    background-color: rgb(237, 237, 237);
+                }
+
+                .info {
+                    .name {
+                        color: $darkColor;
+                        font-size: 1.25rem;
+                    }
+
+                    p {
+                        font-size: 1rem;
+                    }
+                }
+
+                &:hover {
+                    background-color: rgb(237, 237, 237);
+                    padding: .5rem;
+                }
+            }
+        }
+    }
+}
+
+
+
+// Responsive 520px Screens
+@media screen and (min-width: 520px) {
+    .sellers {
+        .sectionContainer {
+            .sectionHeading {
+                 margin-top: 2rem;
+
+                 .sectionTitle {
+                    font-size: 1.5rem;
+                 }
+
+                 p {
+                    font-size: 1.0625rem;
+                    margin: 1rem 0 1.5rem;
+                 }
+            }
+
+            .sellersContainer {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+
+                .singleSeller {
+                    gap: 1.5rem;
+                    // margin-top: 2rem;
+                }
+            }
+        }
+    }
+}
+
+
+// Responsive 520px Screens
+@media screen and (min-width: 991px) {
+    .sellers {
+        .sectionContainer {
+            .sectionHeading {
+                 .sectionTitle {
+                    font-size: 2rem;
+                 }
+
+                 p {
+                    font-size: 1.25rem;
+                 }
+            }
+
+            .sellersContainer {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    }
+}

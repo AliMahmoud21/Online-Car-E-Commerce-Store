@@ -1,0 +1,178 @@
+// Importing the variables file
+@use '../partials/variables' as *;
+@use '../partials/mixins' as *;
+
+// Styling the trending component
+.auction {
+    .sectionContainer {
+        .sectionHeading {
+            justify-content: space-between;
+            padding: 1rem 0;
+
+            .navBtns {
+                gap: .5rem;
+
+                .icon {
+                    padding: .25rem .5rem;
+                    border-radius: .25rem;
+                    background-color: $secondryColor;
+                    font-size: 1.5rem;
+                    color: $darkColor;
+                    cursor: pointer;
+                    transition: $transition;
+
+                    &:hover {
+                        background-color: $primaryColor;
+                        color: $lightColor;
+                    }
+                }
+            }
+        }
+
+        .carContainer {
+            gap: 2rem;
+            transition: $transition;
+            
+            .singleCar {
+                text-align: left;
+                transition: $transition;
+                padding: 1rem;
+                border-radius: .25rem;
+
+                &:hover {
+                    // transform: translateY(-.35rem);
+                    padding: 1rem;
+                    background-color: $secondryColor;
+                    
+                    .price_buyBtn {
+                        span {
+                            border: 1px solid $primaryColor;
+                        }
+                    }
+                }
+
+                .imgDiv {
+                    // height: 12.5rem;
+                    // width: 100%;
+                    overflow: hidden;
+                    border-radius: .75rem;
+                    border: .25rem solid transparent;
+                    
+                    img {
+                        transition: $transition;
+                    }
+                }
+            }
+
+            .singleCarActive {
+                padding: 1rem;
+                background-color: $secondryColor;
+
+                .price_buyBtn {
+                    span {
+                        border: 1px solid $primaryColor;
+                    }
+                }
+            }
+
+            .carTitle {
+                color: $darkColor;
+                padding: .75rem;
+            }
+
+            .miles {
+                color: $darkColor;
+                opacity: .7;
+                font-size: .875rem;
+            }
+
+            .AWD {
+                padding: 1rem 0;
+                color: $darkColor;
+                font-weight: 600;
+            }
+
+            .price_buyBtn {
+                gap: 1rem;
+
+                span {
+                    cursor: pointer;
+                    padding: .5rem 1rem;
+                    border-radius: .18rem;
+                    font-weight: 600;
+                }
+
+                .price {
+                    background-color: $secondryColor;
+                    color: $primaryColor;
+                }
+
+                .buyBtn {
+                    background-color: $primaryColor;
+                    color: $lightColor;
+                    cursor: pointer;
+                    padding: .5rem 1rem;
+                    transition: $transition;
+
+                    &:hover {
+                        background-color: $secondryColor;
+                        color: $primaryColor;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// Responsive 520px Screens
+@media screen and (min-width: 520px) {
+    .auction {
+        .sectionContainer {
+            .sectionHeading {
+                margin-top: 1rem;
+
+                .sectionTitle {
+                    font-size: 1.5rem;
+                }
+            }
+
+            .carContainer {
+                grid-template-columns: repeat(2, 1fr);
+
+                .singleCar {
+                    .singleCarTitle {
+                        font-size: 1.0625rem;
+                    }
+
+                    .miles,
+                    .AWD {
+                        font-size: 1rem;
+                    }
+
+                    .price_buyBtn {
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// Responsive 991px Screens
+@media screen and (min-width: 991px) {
+    .auction {
+        .sectionContainer {
+            .sectionHeading {
+                .sectionTitle {
+                    font-size: 1.75rem;
+                }
+            }
+
+            .carContainer {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    }
+}

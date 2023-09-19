@@ -1,0 +1,162 @@
+// Importing the variables file
+@use '../partials/variables' as *;
+@use '../partials/mixins' as *;
+
+// Styling the home component
+.home {
+    padding-top: 8rem;
+
+    .sectionContainer {
+        padding: 0 1.5rem;
+        text-align: center;
+        display: grid;
+        gap: 2rem;
+
+        .homeText {
+            .homeSpan {
+                color: $textColor;
+                font: {
+                    size: 1rem;
+                    weight: 400;
+                }
+            }
+
+            .homeTitle {
+                color: $darkColor;
+                font: {
+                    size: 1.875rem;
+                    weight: 700;
+                }
+            }
+
+            .btns {
+                gap: 1rem;
+                justify-content: center;
+
+                .btn {
+                    padding: 0.75rem 1rem;
+                    border-radius: 0.25rem;
+                    margin-top: 0.5rem;
+                    transition: $transition;
+                    font: {
+                        size: .75rem;
+                        weight: 600;
+                    }
+
+                    &:hover {
+                        background-color: $primaryColor;
+                        color: $lightColor;
+                    }
+
+                    &:nth-child(2) {
+                        &:hover {
+                            background-color: $lightColor;
+                            color: $darkColor;
+                        }
+                    }
+                }
+            }
+        }
+
+        .homeImage {
+            margin: auto;
+        }
+    }
+}
+
+// Responsive 520px Screens
+@media screen and (min-width: 520px) {
+    .home {
+        .sectionContainer {
+            .homeText {
+                .homeSpan {
+                    font-size: 1.625rem;
+                }
+
+                .homeTitle {
+                    font-size: 2.25rem;
+                }
+
+                .btns {
+                    .btn {
+                        font-size: .875rem;
+                    }
+                }
+            }
+
+            .homeImage {
+                max-width: 85%;
+                transition: $transition;
+
+                img {
+                    transition: $transition;
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// Responsive 768px Screens
+@media screen and (min-width: 768px) {
+    .home {
+        padding-top: 10rem;
+        .sectionContainer {
+            gap: 2.5rem;
+            .homeText {
+                .homeSpan {
+                    font-size: 1.25rem;
+                }
+
+                .homeTitle {
+                    font-size: 3rem;
+                }
+
+                .btns {
+                    margin-top: 1rem;
+                }
+            }
+
+            .homeImage {
+                max-width: 85%;
+                transition: $transition;
+            }
+        }
+    }
+}
+
+
+// Responsive 991px Screens
+@media screen and (min-width: 991px) {
+    .home {
+        padding-top: 8rem;
+        .sectionContainer {
+            gap: 3rem;
+            .homeText {
+                .homeSpan {
+                    font-size: 1.5rem;
+                }
+
+                .homeTitle {
+                    font-size: 3.5rem;
+                }
+
+                .btns {
+                    .btn {
+                        font-size: 1rem;
+                        padding: 1rem 2rem;
+                    }
+                }
+            }
+
+            .homeImage {
+                transition: $transition;
+            }
+        }
+    }
+}
+
+

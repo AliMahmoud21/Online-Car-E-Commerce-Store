@@ -1,0 +1,187 @@
+// Importing the variables file
+@use '../partials/variables' as *;
+@use '../partials/mixins' as *;
+
+// Styling the review component
+.review {
+    .sectionContainer {
+        .sectionHeading {
+            justify-content: space-between;
+            padding: 1rem 0;
+
+            .navBtns {
+                gap: .5rem;
+                
+                .icon {
+                    padding: .18rem .25rem;
+                    background-color: $secondryColor;
+                    color: $darkColor;
+                    border-radius: .18rem;
+                    font-size: 1.5rem;
+                    cursor: pointer;
+                    transition: $transition;
+
+                    &:hover {
+                        background-color: $primaryColor;
+                        color: $lightColor;
+                    }
+                }
+            }
+        }
+
+        .reviewContainer {
+            gap: 1.5rem;
+
+            .singleReview {
+                transition: $transition;
+
+                .imgDiv {
+                    width: 100%;
+                    overflow: hidden;
+                    border-radius: .25rem;
+                    border: .25rem solid transparent;
+                }
+            }
+
+            .reviewTitle {
+                color: $darkColor;
+                padding-top: .75rem;
+            }
+
+            .description {
+                color: $darkColor;
+                opacity: .7;
+                font-size: .875rem;
+            }
+
+            .reviewerDiv {
+                justify-content: space-between;
+                margin-top: 1rem;
+                align-items: center;
+
+                .leftDiv {
+                    gap: .8rem;
+
+                    .reviewerImage {
+                        width: 3rem;
+                        overflow: hidden;
+                        border-radius: 50%;
+                        
+                        img {
+                            width: 100%;
+                        }
+                    }
+
+                    .aboutReviewer {
+                        .name {
+                            color: $darkColor;
+                            font-weight: 600;
+                            padding-bottom: .5rem;
+                        }
+
+                        p {
+                            color: $textColor;
+                            font-size: .875rem;
+                        }
+                    }
+                }
+
+                .rightDiv {
+                    gap: .3rem;
+                    align-items: center;
+                    justify-content: center;
+
+                    .icon {
+                        color: rgb(255, 255, 0);
+
+                        blockquote {
+                            font: {
+                                size: .875rem;
+                                weight: 600;
+                            }
+                        }
+                    }
+                }
+            }
+            &:hover {
+                transition: $transition;
+                // transform: translateY(-.25rem)
+            }
+        }
+    }
+}
+
+
+// Responsive 520px Screens
+@media screen and (min-width: 520px) {
+    .review {
+        .sectionContainer {
+            .sectionHeading {
+                margin-top: 1rem;
+
+                .sectionTitle {
+                    font-size: 1.5rem;
+                }
+            }
+
+            .reviewContainer {
+                grid-template-columns: repeat(2, 1fr);
+
+                .singleReview {
+                    .reviewTitle {
+                        font-size: 1.0625rem;
+                    }
+
+                    .description {
+                        font-size: 1rem;
+                    }
+
+                    .reviewerDiv {
+                        .leftDiv {
+                            .aboutReviewer {
+                                .name {
+                                    font-size: 1rem;
+                                }
+
+                                p {
+                                    font-size: 1rem;
+                                }
+                            }
+                        }
+
+                        .rightDiv {
+                            .icon {
+                                font-size: 1rem;
+                            }
+
+                            blockquote {
+                                font: {
+                                    size: 1rem;
+                                    weight: 600;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// Responsive 991px Screens
+@media screen and (min-width: 991px) {
+    .review {
+        .sectionContainer {
+            .sectionHeading {
+                .sectionTitle {
+                    font-size: 1.75rem;
+                }
+            }
+
+            .reviewContainer {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    }
+}

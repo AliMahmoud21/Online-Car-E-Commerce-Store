@@ -1,0 +1,105 @@
+// Importing the variables file
+@use '../partials/variables' as *;
+@use '../partials/mixins' as *;
+
+// Styling the footer component
+.footer {
+    padding: 4rem 0 0;
+
+    .footerContainer {
+        .footerMenuDiv {
+            padding: 4rem 2rem;
+            background-color: $greyColor;
+            // border-radius: .75rem;
+            gap: 1.5rem;
+
+           .singleGrid {
+            .footerTitle {
+                display: block;
+                padding-bottom: .5rem;
+                color: $darkColor;
+                font-weight: 700;
+            }
+
+            .footerUl {
+                gap: .25rem;
+
+                .footerLi {
+                    cursor: pointer;
+                    transition: $transition;
+
+                    &:hover {
+                        color: $primaryColor;
+                        transform: translateX(.25rem);
+                    }
+                }
+
+            }
+           } 
+        }
+
+        .lowerSection {
+            padding: 2rem 1rem 1rem;
+            text-align: center;
+        }
+    }
+}
+
+
+// Responsive 520px Screens
+@media screen and (min-width: 520px) {
+    .footer {
+        .footerContainer {
+            .footerMenuDiv {
+                grid-template-columns: repeat(2, 1fr);
+
+                .singleGrid {
+                    .footerTitle {
+                        font-size: 1rem;
+                    }
+
+                    .footerUl {
+                        gap: .25rem;
+
+                        .footerLi {
+                            color: $textColor;
+                        }
+                    }
+
+                }
+            }
+
+            .lowerSection {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}
+
+
+// Responsive 768px Screens
+@media screen and (min-width: 768px) {
+    .footer {
+        .footerContainer {
+            .footerMenuDiv {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    }
+}
+
+
+// Responsive 991px Screens
+@media screen and (min-width: 991px) {
+    .footer {
+        .footerContainer {
+            // width: 100%;
+            padding: 2rem 0;
+            .footerMenuDiv {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    }
+}

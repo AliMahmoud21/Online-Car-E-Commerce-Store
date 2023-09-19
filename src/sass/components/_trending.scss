@@ -1,0 +1,164 @@
+// Importing the variables file
+@use '../partials/variables' as *;
+@use '../partials/mixins' as *;
+
+// Styling the trending component
+.trending {
+    .sectionContainer {
+        .sectionHeading {
+            justify-content: space-between;
+            padding: 1rem 0;
+
+            .navBtns {
+                gap: .5rem;
+
+                .icon {
+                    padding: .25rem .5rem;
+                    border-radius: .25rem;
+                    background-color: $secondryColor;
+                    font-size: 1.5rem;
+                    color: $darkColor;
+                    cursor: pointer;
+                    transition: $transition;
+
+                    &:hover {
+                        background-color: $primaryColor;
+                        color: $lightColor;
+                    }
+                }
+            }
+        }
+
+        .carContainer {
+            gap: 2rem;
+            transition: $transition;
+
+            .singleCar {
+                transition: $transition;
+                text-align: left;
+
+                &:hover {
+                    transform: translateY(-.35rem);
+    
+                    .imgDiv {
+                        border: .25rem solid $primaryColor;
+                    }
+                }
+
+                .imgDiv {
+                    height: 12rem;
+                    width: 100%;
+                    overflow: hidden;
+                    border-radius: .75rem;
+                    border: .25rem solid transparent;
+                    
+                    img {
+                        transition: $transition;
+                        height: 100%;
+                        
+                        &:hover {
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+            }
+
+            .carTitle {
+                color: $darkColor;
+                padding: .75rem;
+                text-transform: uppercase;
+            }
+
+            .miles {
+                color: $darkColor;
+                opacity: .7;
+                font-size: .875rem;
+            }
+
+            .AWD {
+                padding: 1rem 0;
+                color: $darkColor;
+                font-weight: 600;
+            }
+
+            .price_seller {
+                gap: 1rem;
+
+                span {
+                    cursor: pointer;
+                    padding: .5rem 1rem;
+                    border-radius: .18rem;
+                    font-weight: 600;
+                }
+
+                .price {
+                    background-color: $secondryColor;
+                    color: $primaryColor;
+                }
+
+                .seller {
+                    color: $textColor;
+                    background-color: $lightColor;
+                    padding: .5rem 1rem;
+                }
+            }
+        }
+    }
+}
+
+
+
+// Responsive 520px Screens
+@media screen and (min-width: 520px) {
+    .trending {
+        .sectionContainer {
+            .sectionHeading {
+                margin-bottom: 1rem;
+
+                .sectionTitle {
+                    font-size: 1.25rem;
+                }
+            }
+
+            .carContainer {
+                grid-template-columns: repeat(2, 1fr);
+
+                .singleCar {
+                    .carTitle {
+                        font-size: 1.0625rem;
+                    }
+
+                    .miles,
+                    .AWD {
+                        font-size: 1rem;
+                    }
+
+                    .price_seller {
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// Responsive 991px Screens
+@media screen and (min-width: 991px) {
+    .trending {
+        // padding-top: 6rem;
+        .sectionContainer {
+            .sectionHeading {
+                margin-bottom: 1rem;
+
+                .sectionTitle {
+                    font-size: 1.25rem;
+                }
+            }
+
+            .carContainer {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    }
+}

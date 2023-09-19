@@ -1,0 +1,198 @@
+// Importing the variables file
+@use '../partials/variables' as *;
+@use '../partials/mixins' as *;
+
+// Styling The Navbar Component
+.header {
+    @include flexBetween;
+    position: fixed;
+    width: 100%;
+    height: 5rem;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 0.25rem 0.4rem rgb(237, 237, 237);
+    z-index: 999;
+    
+    .logo {
+        img {
+            width: 4rem;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        .navbar {
+            position: absolute;
+            background-color: $secondryColor;
+            width: 80%;
+            top: -100rem;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 0.75rem;
+            text-align: center;
+            padding: 2rem;
+            transition: $transition;
+            z-index: 2000;
+            
+            .menu {
+              display: flex;
+              align-items: center;
+              flex-direction: column;
+              
+              .listItem {
+                padding: 0.5rem 1rem;
+                border-radius: 0.75rem;
+                cursor: pointer;
+                transition: $transition;
+
+                a {
+                    color: $darkColor;
+                }
+
+                &:hover {
+                    background-color: $primaryColor;
+                    color: $lightColor;
+
+                    a {
+                        color: $lightColor;
+                    }
+                }
+              }
+            }
+
+            .closeIcon {
+                position: absolute;
+                bottom: -1rem;
+                right: 50%;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: $secondryColor;
+                color: $primaryColor;
+                padding: .25rem;
+                border-radius: 4rem;
+                font-size: 2.25rem;
+            }
+        }
+    }
+
+    .signUp {
+        gap: .6rem;
+        .text {
+            padding: 0.25rem 0.75rem;
+            background-color: $primaryColor;
+            border-radius: 0.25rem;
+            color: $lightColor;
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: $transition;
+
+            &:hover {
+                background-color: $secondryColor;
+                color: $darkColor;
+            }
+        }
+
+        .toggleIcon {
+            background-color: none;
+            color: $primaryColor;
+            font: {
+                size: 1.25rem;
+                weight: 600;
+            }
+        }
+    }
+    .show {
+        top: 7rem;
+        transition: $transition;
+    }
+}
+
+
+
+.scrolled {
+    background-color: $secondryColor;
+    box-shadow: none;
+}
+
+// Responsive 520px Screens
+@media screen and (min-width: 520px) {
+    .header {
+        .logoDiv {
+            img {
+                width: 2rem;
+            }
+        }
+
+        .signUp {
+            .text {
+                padding: .3rem;
+            }
+
+            .toggleIcon {
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+// Responsive 768px Screens
+@media screen and (min-width: 768px) {
+    .header {
+        .navbar {
+            .closeIcon {
+                display: none;
+            }
+
+            .menu {
+                display: flex;
+                flex-direction: row;
+
+                .listItem {
+                    padding: .3rem 1rem;
+                    border-radius: .25rem;
+                    
+                    a {
+                        color: $textColor;
+                        transition: $transition;
+
+                        &:hover {
+                            background-color: $primaryColor;
+                            color: $lightColor;
+                            padding: inherit;
+                            border-radius: inherit;
+                        }
+                    }
+                    
+                }
+            }
+        }
+
+        .signUp {
+            .text {
+                padding: .35rem .75rem;
+            }
+
+            .toggleIcon {
+                display: none;
+            }
+        }
+    }
+}
+
+// Responsive 1024px Screens
+@media screen and (min-width: 1024px) {
+    .header {
+       padding: 2rem 7rem;
+    }
+}
+
+// Responsive 1400px Screens
+@media screen and (min-width: 1400px) {
+    .header {
+        .navbar {
+            .menu {
+                .listItem {
+                    margin: 0 .8rem;
+                }
+            }
+        }
+    }
+}

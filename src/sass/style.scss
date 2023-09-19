@@ -1,0 +1,14 @@
+// Importing the files of the partials folder
+@use './partials/globals';
+@use './partials/variables';
+@use './partials/mixins';
+
+// Importing the files of the components folder
+@use './components/navbar';
+@use './components/home';
+@use './components/search';
+@use './components/trending';
+@use './components/sellers';
+@use './components/auction';
+@use './components/review';
+@use './components/footer';
