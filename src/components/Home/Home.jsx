@@ -1,4 +1,4 @@
-import homeImg from '../../assets/logo5.png';
+import homeImg from '../../assets/Honda.WEBP';
 
 const Home = () => {
   return (
